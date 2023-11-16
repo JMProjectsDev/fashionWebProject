@@ -1,0 +1,34 @@
+{
+  "categorias_ropa": [
+    "Jeans",
+    "Pantalones",
+    "Chándal",
+    "Bermudas",
+    "Sudaderas",
+    "Camisetas",
+    "Cazadoras y abrigos",
+    "Chalecos",
+    "Jerséis",
+    "Básicos"
+  ],
+  "tipos_zapatillas": ["Sneakers", "Deportivas"],
+  "categorias_ropa_mujer": [
+    "Jeans",
+    "Pantalones",
+    "Vestidos y monos",
+    "Faldas y shorts",
+    "Sudaderas",
+    "Camisetas y camisetas",    
+    "Cazadoras y abrigos",
+    "Jerséis y cárdigans",
+    "Piel",
+    "Básicos"
+  ],
+  "tipos_zapatillas_mujer": ["Plataformas", "Deportivas"],
+  "menuOptionsList": [
+    "Preguntas frecuentes",
+    "Tarjeta regalo",
+    "Newsletter",
+    "Tiendas"
+  ]
+}

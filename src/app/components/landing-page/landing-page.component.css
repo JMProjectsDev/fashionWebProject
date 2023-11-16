@@ -1,0 +1,83 @@
+/* Custom media query*/
+
+/* Para pantallas menores de 1024px */
+@media screen and (max-width: 1075px) {
+  #btn-descubreMas {
+    font-size: 0.8rem /* 16px */;
+    line-height: 1rem /* 24px */;
+    width: 11em;
+  }
+
+  #div_title_lp h1{
+    font-size: 4rem;
+  }
+
+  #div_title_lp img{
+    width: 80px;
+  }
+
+  
+}
+
+/* Para pantallas menores de 768px */
+@media screen and (max-width: 768px) {
+
+  #btn-descubreMas {
+    width: 11em;
+  }
+
+  #section-arrivals div {
+    width: 100%;
+  }
+
+  #btn-sm{
+    display: flex;
+    justify-content: center;
+  }
+
+  #div_title_lp{
+    display: flex;    
+    place-items: center;
+  }
+
+  #div_title_lp h1{
+    width: auto;
+  }
+
+  #div_title_lp img{
+    width: 80px;
+  }
+
+}
+
+/* Para pantallas menores de 480px */
+@media screen and (max-width: 480px) {
+
+  #video-layout{
+    height: 100vh;
+  }
+
+  #btn-descubreMas {
+    width: 9rem;
+  }
+
+  #btn-sm{
+    display: flex;
+    justify-content: center;
+  }
+
+  #div_title_lp {
+    display: flex;
+    place-items: center;
+  }
+
+  #div_title_lp h1{
+    width: auto;
+    font-size: 30px;
+  }
+
+  #div_title_lp img{
+    width: 50px;
+  }
+
+}

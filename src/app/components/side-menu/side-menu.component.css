@@ -1,0 +1,50 @@
+.hover-underline-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #000;
+  height: 2px;
+  transition-property: right;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  right: 0;
+}
+
+.underline-active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px; /* Grosor del subrayado */
+  background-color: currentColor; /* Color de texto actual */
+  transition: opacity 300ms, transform 300ms; /* Suaviza la transición de la línea */
+}
+
+.underline-active {
+  position: relative;
+}
+
+.underline-active::after {
+  position: absolute;
+  bottom: -2px; /* Ajusta según la altura del texto */
+  left: 0;
+  opacity: 1; /* Línea visible */
+  transform: scaleX(1); /* Línea a escala normal */
+}
+
+.underline-inactive::after {
+  opacity: 0; /* Línea invisible */
+  transform: scaleX(0); /* Línea reducida a 0 */
+}
+
+
