@@ -1,5 +1,5 @@
-<section class="flex flex-col lg:h-screen z-40 md:overflow-hidden">
-  <div id="video-layout" class="relative flex-grow-0 w-full h-1/2">
+<section class="flex flex-col z-40 md:overflow-hidden">
+  <div id="video-layout" class="relative flex-grow-0 w-full">
     <div
       id="opacity-layout"
       class="absolute w-full h-full bg-black z-30 opacity-20"
@@ -36,10 +36,19 @@
       Descubre más -->
     </button>
   </div>
-  <section id="section-arrivals" class="flex-grow bg-white w-full">
-    <h3 class="text-center font-bold text-3xl mb-6">New Arrivals</h3>
+  <section id="section-arrivals" class="w-full">
+    <div class="marquee bg-black text-white p-1 font-bold font-sans">
+      <span class="marquee-content-t">
+        <ng-container *ngFor="let item of arrivals; let i = index">
+          New Arrivals <span class="separator">/ \</span> Novedades
+          <span class="separator">/ \</span>
+        </ng-container>
+      </span>
+    </div>
     <div class="flex flex-wrap justify-around">
-      <div class="p-4 w-full sm:w-1/2 lg:w-1/3 flex justify-center">
+      <div
+        class="p-4 w-full sm:w-1/2 lg:w-1/3 flex justify-center drop-shadow-md"
+      >
         <!-- Contenedor de la tarjeta custom figma-->
         <div
           class="flex flex-col items-center h-80 w-80 bg-cover rounded-3xl"
@@ -48,7 +57,7 @@
           <!-- Contenido de la tarjeta -->
           <div id="btn-sm" class="mt-auto mb-2 mx-auto">
             <button
-              class="mx-auto text-base font-sans bg-black text-white rounded-lg hover:bg-white font-bold hover:text-black px-2 py-1 w-52 transition-colors duration-200"
+              class="drop-shadow-md mx-auto text-base font-sans bg-black text-white rounded-lg hover:bg-white font-bold hover:text-black px-2 py-1 w-52 transition-colors duration-200"
             >
               Chaquetas y abrigos -->
             </button>
@@ -56,7 +65,9 @@
         </div>
       </div>
 
-      <div class="p-4 w-full sm:w-1/2 lg:w-1/3 flex justify-center">
+      <div
+        class="p-4 w-full sm:w-1/2 lg:w-1/3 flex justify-center drop-shadow-md"
+      >
         <!-- Contenedor de la tarjeta custom figma-->
         <div
           class="flex flex-col items-center h-80 w-80 bg-cover rounded-3xl"
@@ -65,7 +76,7 @@
           <!-- Contenido de la tarjeta -->
           <div id="btn-sm" class="mt-auto mb-2">
             <button
-              class="mx-auto text-base font-sans bg-black text-white rounded-lg hover:bg-white font-bold hover:text-black px-2 py-1 w-52 transition-colors duration-200"
+              class="drop-shadow-md mx-auto text-base font-sans bg-black text-white rounded-lg hover:bg-white font-bold hover:text-black px-2 py-1 w-52 transition-colors duration-200"
             >
               Cargos -->
             </button>
@@ -73,7 +84,9 @@
         </div>
       </div>
 
-      <div class="p-4 w-full sm:w-1/2 lg:w-1/3 flex justify-center">
+      <div
+        class="p-4 w-full sm:w-1/2 lg:w-1/3 flex justify-center drop-shadow-md"
+      >
         <!-- Contenedor de la tarjeta custom figma-->
         <div
           class="flex flex-col items-center group h-80 w-80 bg-cover rounded-3xl"
@@ -82,7 +95,7 @@
           <!-- Contenido de la tarjeta -->
           <div id="btn-sm" class="mt-auto mb-2">
             <button
-              class="mx-auto text-base font-sans bg-black text-white rounded-lg hover:bg-white font-bold hover:text-black px-2 py-1 w-52 transition-colors duration-200"
+              class="drop-shadow-md mx-auto text-base font-sans bg-black text-white rounded-lg hover:bg-white font-bold hover:text-black px-2 py-1 w-52 transition-colors duration-200"
             >
               Accesorios -->
             </button>
@@ -90,6 +103,15 @@
         </div>
       </div>
     </div>
+    <div class="marquee bg-black text-white p-1 font-bold font-sans">
+      <span class="marquee-content">
+        <ng-container *ngFor="let item of arrivals; let i = index">
+          New Arrivals <span class="separator">/ \</span> Novedades
+          <span class="separator">/ \</span>
+        </ng-container>
+      </span>
+    </div>
+    
   </section>
 
   <!-- Slider -->

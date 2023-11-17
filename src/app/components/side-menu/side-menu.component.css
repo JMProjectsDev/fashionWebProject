@@ -47,4 +47,68 @@
   transform: scaleX(0); /* Línea reducida a 0 */
 }
 
+/* Estilos base para el menú lateral */
+.fixed-menu {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: 96; /* Ancho por defecto */
+  background: white;
+  transition: transform 0.5s ease-in-out;
+}
 
+.fixed-menu section {
+  line-height: 32px;
+}
+
+/* Se oculta el menú lateral por defecto */
+.fixed-menu {
+  transform: translateX(-100%);
+}
+
+/* Se muestra el menú lateral cuando isOpen es true */
+.fixed-menu.open {
+  transform: translateX(0);
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .fixed-menu {
+    width: 75%; /* Ancho del menú lateral más pequeño para pantallas pequeñas */
+  }
+
+  .fixed-menu section {
+    font-size: 17px;
+    line-height: 28px;
+  }
+}
+
+/* Media query para pantallas aún más pequeñas, como teléfonos móviles */
+@media (max-width: 480px) {
+  .fixed-menu {
+    width: 100%; /* El menú lateral ocupa toda la pantalla */
+  }
+
+  /* Aquí puedes ajustar el tamaño de fuente y otros estilos para el contenido del menú */
+  .fixed-menu section {
+    font-size: 20px;
+    line-height: 35px;
+  }
+}
+
+/* Media query para pantallas pequeñas como iPhone SE */
+@media (max-width: 375px) {
+  .fixed-menu section {
+    font-size: 17px;
+    line-height: 27px;
+  }
+}
+
+/* Media query para pantallas pequeñas como iPhone SE */
+@media (max-height: 600px) {
+  .fixed-menu section {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

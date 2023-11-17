@@ -1,8 +1,7 @@
 <!-- Side menu -->
 <div
-  class="fixed z-50 top-0 h-full w-96 bg-white shadow-md transition-transform duration-500 ease-in-out"
-  [class.translate-x-0]="isOpen"
-  [class.-translate-x-full]="!isOpen"
+  class="fixed-menu z-50 top-0 h-full flex flex-col justify-center w-96 bg-white shadow-md transition-transform duration-500 ease-in-out"
+  [class.open]="isOpen"
 >
   <!-- Botón de cierre -->
   <button class="absolute top-3 left-3" (click)="menuService.toggle()">
@@ -11,9 +10,7 @@
     ></i>
   </button>
 
-  <section
-    class="flex flex-col items-center justify-center h-screen text-lg space-y-2"
-  >
+  <section class="flex flex-col items-center text-xl space-y-2">
     <div class="mb-4">
       <a
         href=""
@@ -23,7 +20,7 @@
           'underline-inactive': activeGender !== 'Hombre',
           'text-gray-400': activeGender !== 'Hombre'
         }"
-        class="font-medium text-lg relative mx-2 cursor-pointer"
+        class="font-medium md:text-lg relative mx-2 cursor-pointer"
         >Hombre</a
       >
       |
@@ -35,15 +32,18 @@
           'underline-inactive': activeGender !== 'Mujer',
           'text-gray-400': activeGender !== 'Mujer'
         }"
-        class="font-medium text-lg relative mx-2 cursor-pointer"
+        class="font-medium md:text-lg relative mx-2 cursor-pointer"
         >Mujer</a
       >
     </div>
-    <div [@slideAnimation]="slideDirection" class="flex flex-col place-items-center">
+    <div
+      [@slideAnimation]="slideDirection"
+      class="flex flex-col place-items-center"
+    >
       <a
         href=""
         id="cat1"
-        class="font-medium text-2xl relative hover-underline-animation"
+        class="font-medium md:text-2xl relative hover-underline-animation"
         >Novedades</a
       ><a href="" id="cat2" class="transition-all duration-300"
         >Los más vendidos</a
