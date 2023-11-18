@@ -1,0 +1,76 @@
+.footer-container {
+    width: 100%;
+    padding: 2rem 2rem 0rem 2rem;
+    background-color: white; /* Ajusta el color de fondo según tu diseño */
+    box-sizing: border-box;
+  }
+  
+  .footer-section {
+    margin-bottom: 1rem;
+  }
+  
+  .footer-section h5 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-section a {
+    color: #898989;
+  }
+  
+  /* Asegúrate de que los logos de pago y los iconos de redes sociales tengan el tamaño adecuado */
+  .footer-section img {
+    margin-right: 0.5rem;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #d1d1d1; /* Color de la línea */
+    padding: 1rem 0;
+    text-align: center; /* Centra los enlaces en la parte inferior */
+    font-size: 0.875rem; /* Tamaño de fuente más pequeño */
+    color: #898989;
+  }
+  
+  .footer-bottom a {
+    margin: 0 3px;
+  }
+  
+  /* Media queries para hacer el footer responsive */
+  @media (max-width: 820px) {
+    .footer-container {
+      padding: 1rem;
+    }
+
+    .footer-container section{
+      flex-direction: column;
+    }
+  
+    .footer-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;     
+    }
+  
+    .footer-section img {
+      margin-bottom: 0.5rem; /* Añade un margen si apilas los logos de pago */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-container section{
+      flex-direction: column;
+    }
+    .footer-section {
+      /* En pantallas muy pequeñas, puedes querer que todo esté más apilado y centrado */  
+      align-items: center;
+    }
+
+    .cards{
+      justify-content: center;
+    }
+  
+    .footer-bottom {
+      font-size: 0.75rem; /* Tamaño de fuente aún más pequeño para pantallas muy pequeñas */
+    }
+  }
+  

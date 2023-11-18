@@ -1,5 +1,5 @@
 /* Custom media query*/
-#videolp{
+#videolp {
   height: 50vh;
 }
 /* Para pantallas menores de 1024px */
@@ -50,7 +50,7 @@
 
 /* Para pantallas menores de 480px */
 @media screen and (max-width: 480px) {
-  #videolp{
+  #videolp {
     height: 100vh;
   }
 
