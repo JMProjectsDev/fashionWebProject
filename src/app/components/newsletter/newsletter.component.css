@@ -1,0 +1,73 @@
+.newsletter {
+  background-image: linear-gradient(to top, #ededed, #fcfcfc);
+  text-align: center; /* Centra el texto y los elementos */
+}
+
+.newsletter-content h2 {
+  margin-bottom: 0.5rem; /* Espacio debajo del título */
+}
+
+.newsletter-content p {
+  margin-bottom: 1rem; /* Espacio debajo del párrafo */
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem; /* Espacio entre el input y el botón */
+  margin-bottom: 1rem; /* Espacio debajo del formulario */
+}
+
+.newsletter-form input {
+  padding: 0.5rem;
+  border: 1px solid #ccc; /* Borde del input */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.newsletter-form button {
+  padding: 0.8rem;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #ccc; /* Sin bordes */
+  border-radius: 10px;
+  cursor: pointer;
+  height: auto;
+}
+
+.newsletter-options a {
+  display: block; /* Hace que cada enlace se muestre en su propia línea */
+  margin-bottom: 0.5rem; /* Espacio debajo de cada enlace */
+}
+
+/* Media queries para hacer el componente responsive */
+@media (max-width: 768px) {
+  .newsletter-form {
+    flex-direction: column; /* Apila el input y el botón verticalmente */
+  }
+
+  .newsletter-form input {
+    width: 100%; /* Hace que el input y el botón ocupen todo el ancho */
+  }
+
+  .newsletter-options a {
+    margin-bottom: 1rem; /* Aumenta el espacio debajo de los enlaces */
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletter-content {
+    padding: 1rem; /* Menos relleno en pantallas más pequeñas */
+  }
+
+  .newsletter-content h2 {
+    font-size: 36px;
+  }
+
+  .newsletter-content p {
+    font-size: 16px;
+  }
+
+  .newsletter-form button {
+    width: auto; /* Hace que el input y el botón ocupen todo el ancho */
+  }
+}

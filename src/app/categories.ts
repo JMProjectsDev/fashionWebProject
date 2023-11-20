@@ -3,5 +3,6 @@ export interface Categories {
     tipos_zapatillas: string[],
     categorias_ropa_mujer: string[],
     tipos_zapatillas_mujer: string[],
-    menuOptionsList: string[]
+    menuOptionsList: string[],
+    top_ventas: string[]
 }

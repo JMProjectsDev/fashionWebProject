@@ -18,7 +18,7 @@
     "Vestidos y monos",
     "Faldas y shorts",
     "Sudaderas",
-    "Camisetas y camisetas",    
+    "Camisetas y camisetas",
     "Cazadoras y abrigos",
     "Jerséis y cárdigans",
     "Piel",
@@ -30,5 +30,56 @@
     "Tarjeta regalo",
     "Newsletter",
     "Tiendas"
-  ]
+  ],
+  "top_ventas": {
+    "producto1": {
+      "cat":"chaquetas-y-plumas",
+      "nombre": "Chaqueta plumas 'Pacific Republic' hombre",
+      "precio": "29€",
+      "img": "../../../assets/img/prod1.png",
+      "tipo": "hombre"
+    },
+    "producto2": {
+      "cat":"jerseis-y-cardigans",
+      "nombre": "Jerséi lineas horizontales mujer",
+      "precio": "18€",
+      "img": "../../../assets/img/prod5.png",
+      "tipo": "mujer"
+    },
+    "producto3": {
+      "cat":"pantalones",
+      "nombre": "Cargos con bolsillos laterales hombre",
+      "precio": "19,99€",
+      "img": "../../../assets/img/prod3.png",
+      "tipo": "hombre"
+    },
+    "producto4": {
+      "cat":"plataformas",
+      "nombre": "Tacones plataforma mujer",
+      "precio": "15,50€",
+      "img": "../../../assets/img/prod4.png",
+      "tipo": "mujer"
+    },
+    "producto5": {
+      "cat":"sudaderas",
+      "nombre": "Sudadera 'Rhode Island' hombre",
+      "precio": "18€",
+      "img": "../../../assets/img/prod6.png",
+      "tipo": "hombre"
+    },
+    "producto6": {
+      "cat":"deportivas",
+      "nombre": "Sneakers urban mujer",
+      "precio": "38€",
+      "img": "../../../assets/img/prod7.png",
+      "tipo": "mujer"
+    },
+    "producto7": {
+      "cat":"accesorios",
+      "nombre": "Cinturón piel hombre",
+      "precio": "5€",
+      "img": "../../../assets/img/prod9.png",
+      "tipo": "hombre"
+    }
+  }
 }
