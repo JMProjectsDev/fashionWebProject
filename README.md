@@ -1,5 +1,4 @@
-# FashionWebProject
-## Landing page
+# FashionWebProject (En desarrollo)
 ![c1](https://github.com/JMProyects/fashionWebProject/assets/91617930/30c95cd9-29ac-4c7b-b7eb-3a3c532c0692)
 
 
