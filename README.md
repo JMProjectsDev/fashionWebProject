@@ -1,4 +1,6 @@
 # FashionWebProject
+![c1](https://github.com/JMProyects/fashionWebProject/assets/91617930/30c95cd9-29ac-4c7b-b7eb-3a3c532c0692)
+Landing page
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
 
