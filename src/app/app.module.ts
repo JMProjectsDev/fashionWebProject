@@ -11,6 +11,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { BrandCollabsComponent } from './components/brand-collabs/brand-collabs.component';
 import { TopVentasComponent } from './components/top-ventas/top-ventas.component';
+import { SwiperModule } from 'swiper/angular';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,13 @@ import { TopVentasComponent } from './components/top-ventas/top-ventas.component
     BrandCollabsComponent,
     TopVentasComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    SwiperModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

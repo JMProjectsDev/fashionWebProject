@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
 
 body {
   background-color: rgba(0, 0, 0, 0.6);  

@@ -1,0 +1,20 @@
+::ng-deep .swiper-button-next,
+::ng-deep .swiper-button-prev {
+  color: #207868 !important;
+  padding: 20px;
+}
+
+:root {
+  --swiper-theme-color: #207868 !important;
+}
+
+/* Aplicar estilos a los bullets activos e inactivos */
+::ng-deep .swiper-pagination-bullet-active,
+::ng-deep .swiper-pagination-bullet {
+    background: #207868 !important; /* Color de los bullets */
+}
+
+/* Si solo quieres cambiar los bullets activos, puedes quitar la clase .swiper-pagination-bullet */
+::ng-deep .swiper-pagination-bullet-active {
+    background: #207868 !important; /* Color de los bullets activos */
+}
