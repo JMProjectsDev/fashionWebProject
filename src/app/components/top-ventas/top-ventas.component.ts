@@ -34,11 +34,44 @@ export class TopVentasComponent implements AfterViewInit {
   }
 
   slideConfig: SwiperOptions = {
-    slidesPerView: 4,    
+    slidesPerView: 4,
+    spaceBetween: -50,
     navigation: true,
     pagination: {
       clickable: true,
     },
-    // otras configuraciones...
+    breakpoints: {
+      // Cuando la pantalla es >= 0px
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 30,
+      },
+      // Cuando la pantalla es >= 480px
+      480: {
+        slidesPerView: 1,
+        spaceBetween: -20,
+      },
+      // Cuando la pantalla es >= 768px
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      // Cuando la pantalla es >= 1024px
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      // Cuando la pantalla es >= 1280px
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+
+       // Cuando la pantalla es >= 1280px
+       1440: {
+        slidesPerView: 4,
+        spaceBetween: -60,
+      },
+    },
   };
 }
