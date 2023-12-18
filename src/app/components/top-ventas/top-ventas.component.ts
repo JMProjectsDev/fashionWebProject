@@ -34,8 +34,7 @@ export class TopVentasComponent implements AfterViewInit {
   }
 
   slideConfig: SwiperOptions = {
-    slidesPerView: 4,
-    spaceBetween: 5, // Asegúrate de que este valor no sea demasiado grande.
+    slidesPerView: 4,    
     navigation: true,
     pagination: {
       clickable: true,
