@@ -1,7 +1,4 @@
-a {
-  display: inline-block; /* O inline-block si es necesario */
-  padding: 0;
-}
+
 
 ::ng-deep .swiper-button-next,
 ::ng-deep .swiper-button-prev {
@@ -21,35 +18,21 @@ a {
   background: #000 !important; /* Color de los bullets activos */
 }
 
+h1 {
+  font-size: 2.5rem;
+}
 
 /* Estilos base para dispositivos grandes */
-h1 {
-  font-size: 2rem; /* Tamaño más pequeño para el título en dispositivos más pequeños */
-}
 
-.product-card {
-  width: 100%; /* Usa todo el ancho disponible en dispositivos pequeños */
-  max-width: 100px; /* Establece un ancho máximo para que no se vea demasiado grande en dispositivos grandes */
-}
 
-/* Media query para tablets */
-@media (min-width: 768px) {
-  h1 {
-    font-size: 4rem; /* Tamaño más grande para el título en tablets */
-  }
-
+/* Media query para dispositivos pequeños (menores a 1024px) */
+@media (max-width: 1023px) {
   .product-card {
-    max-width: 300px; /* Ancho máximo un poco más pequeño para las tarjetas en tablets */
-  }
-}
-
-/* Media query para dispositivos de escritorio */
-@media (min-width: 1024px) {
-  h1 {
-    font-size: 4rem; /* Tamaño más grande para el título en escritorio */
+    margin: 0 10px; /* Añade padding a los lados del contenedor de Swiper */
   }
 
-  .product-card {
-    max-width: 400px; /* Ancho máximo para las tarjetas en dispositivos de escritorio */
+  .swiper-button-next,
+  .swiper-button-prev {
+    margin: 0 20px; /* Añade margen a las flechas de navegación si es necesario */
   }
 }
