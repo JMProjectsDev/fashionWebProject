@@ -1,5 +1,5 @@
 # FashionWebProject (En desarrollo)
-![c1](https://github.com/JMProyects/fashionWebProject/assets/91617930/30c95cd9-29ac-4c7b-b7eb-3a3c532c0692)
+![image](https://github.com/JMProyects/fashionWebProject/assets/91617930/45226b0e-8ca7-4e10-b1c3-f48aea514c64)
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
