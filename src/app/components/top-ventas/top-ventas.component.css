@@ -1,15 +1,16 @@
-
+a {
+  display: inline-block; /* O inline-block si es necesario */
+  padding: 0;
+}
 
 ::ng-deep .swiper-button-next,
 ::ng-deep .swiper-button-prev {
   color: #000 !important;
   font-weight: 900;
 }
-
 :root {
   --swiper-theme-color: #000 !important;
 }
-
 ::ng-deep .swiper-pagination-bullet-active,
 ::ng-deep .swiper-pagination-bullet {
   background: #000 !important; /* Color de los bullets */
@@ -18,21 +19,124 @@
   background: #000 !important; /* Color de los bullets activos */
 }
 
+/* Estilos base para dispositivos grandes */
 h1 {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Tamaño más pequeño para el título en dispositivos más pequeños */
 }
 
-/* Estilos base para dispositivos grandes */
-
+.product-card {
+  width: 100%; /* Usa todo el ancho disponible en dispositivos pequeños */
+  max-width: 100px; /* Establece un ancho máximo para que no se vea demasiado grande en dispositivos grandes */
+}
 
 /* Media query para dispositivos pequeños (menores a 1024px) */
-@media (max-width: 1023px) {
+@media screen and (max-width: 375px) {
+  a {
+    display: inline-block; /* O inline-block si es necesario */
+    padding: 0;
+  }
   .product-card {
-    margin: 0 10px; /* Añade padding a los lados del contenedor de Swiper */
+    display: flex;
+    place-items: center;
+    justify-content: center;
+  }
+  .item-card {
+    display: grid;
+    grid-template-columns: 165px 110px 75px;
+  }
+  .image-card {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 390px) and (max-width: 400px) {
+  .product-card {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+  }
+  .item-card {
+    display: grid;
+    grid-template-columns: 160px 115px 80px;
+  }
+  .image-card {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 430px) {
+  .product-card {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+  }
+  .item-card {
+    display: grid;
+    grid-template-columns: 170px 125px 90px;
+  }
+  .image-card {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product-card {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+  }
+  .item-card {
+    display: grid;
+    grid-template-columns: 150px 120px 70px;
+  }
+  .image-card {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .product-card {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+  }
+  .item-card {
+    display: grid;
+    grid-template-columns: 155px 125px 75px;
+  }
+  .image-card {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .product-card {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+  }
+  .item-card {
+    display: grid;
+    grid-template-columns: 150px 120px 70px;
+  }
+  .image-card {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Media query para dispositivos de escritorio */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 4rem; /* Tamaño más grande para el título en escritorio */
   }
 
-  .swiper-button-next,
-  .swiper-button-prev {
-    margin: 0 20px; /* Añade margen a las flechas de navegación si es necesario */
+  .product-card {
+    max-width: 400px; /* Ancho máximo para las tarjetas en dispositivos de escritorio */
   }
 }

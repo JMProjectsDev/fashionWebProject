@@ -67,8 +67,8 @@ export class TopVentasComponent implements AfterViewInit {
         spaceBetween: 0,
       },
 
-       // Cuando la pantalla es >= 1280px
-       1440: {
+      // Cuando la pantalla es >= 1280px
+      1440: {
         slidesPerView: 4,
         spaceBetween: -60,
       },
