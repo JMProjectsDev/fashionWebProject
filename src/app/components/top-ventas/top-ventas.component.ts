@@ -46,6 +46,10 @@ export class TopVentasComponent implements AfterViewInit {
         slidesPerView: 1,
         spaceBetween: 50,
       },
+      270: {
+        slidesPerView: 1,
+        spaceBetween: 80,
+      },
       // Cuando la pantalla es >= 480px
       480: {
         slidesPerView: 1,
@@ -55,6 +59,10 @@ export class TopVentasComponent implements AfterViewInit {
       768: {
         slidesPerView: 2,
         spaceBetween: 30,
+      },
+      912: {
+        slidesPerView: 2,
+        spaceBetween: 0,
       },
       // Cuando la pantalla es >= 1024px
       1024: {
