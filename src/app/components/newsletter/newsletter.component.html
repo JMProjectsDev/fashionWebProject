@@ -6,28 +6,30 @@
       colecciones más exclusivas y promociones únicas. <br />
       <b><i>#RevolucionaTuEstilo</i></b>
     </p>
-    <form [formGroup]="formulario" class="newsletter-form">
-      <div class="flex flex-row ">
-        <input class="w-auto h-auto"
-          type="email"
-          placeholder="E-mail"
-          aria-label="Correo electrónico"
-          formControlName="email"
-        />
-        <button
-          (click)="checkEmail()"
-          aria-label="Suscribirse a la newsletter"
-        >
-          <i class="fas fa-envelope"></i>
-        </button>
-        <br />
-        <!--<div *ngIf="formulario.controls.email.errors">
-          <p *ngIf="formulario.get('email').errors?.required" class="text-red-600">Se requiere un email.</p>
-          <p *ngIf="formulario.get('email').errors?.email" class="text-red-600">Introduzca un email.</p>
-        </div>-->
-      </div>
+    <form [formGroup]="formulario" class="newsletter-form" (ngSubmit)="checkEmail()">
+      <div class="flex flex-col">
+        <div class="flex flex-row">
+          <input class="w-auto h-auto"
+            type="email"
+            placeholder="E-mail"
+            aria-label="Correo electrónico"
+            formControlName="email"
+          />
+          <button            
+            aria-label="Suscribirse a la newsletter"
+          >
+            <i class="fas fa-envelope"></i>
+          </button>
+        </div>
+        <div *ngIf="formulario.controls['email'].touched && formulario.controls['email'].errors">
+          <p *ngIf="formulario.controls['email'].errors?.['required']" class="text-red-600">Se requiere un email.</p>
+          <p *ngIf="formulario.controls['email'].errors?.['pattern']" class="text-red-600">Introduzca un email válido.</p>          
+        </div>
+        <div *ngIf="registroExitoso">
+          <p>Si la dirección de email existe, recibirás un correo de confirmación pronto. ¡Gracias!</p>
+        </div>
+      </div>      
     </form>
-
     <div
       class="newsletter-options flex flex-row justify-center items-end text-gray-500 text-sm"
     >
