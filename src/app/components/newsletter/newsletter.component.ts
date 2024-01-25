@@ -8,8 +8,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class NewsletterComponent {
   formulario: FormGroup;
+  email: string = ''
   registroExitoso: Boolean = false;
-  constructor(private fb: FormBuilder) {    
+  constructor(private fb: FormBuilder) {
     this.formulario = this.fb.group({
       email: [
         '',
@@ -23,17 +24,23 @@ export class NewsletterComponent {
 
   checkEmail() {
     if (this.formulario.valid) {
-      //enviar datos backend
-      this.registroExitoso = true
       console.log('Email correcto!');
+      this.registroExitoso = true;
+      // Enviar datos al backend...
+  
+      // Resetear el formulario pero no limpiar explícitamente los errores
+      this.formulario.reset();
     } else {
-      //controlar errores
-      this.registroExitoso = false
       console.log('Email incorrecto!');
+      this.registroExitoso = false;
     }
-
-    Object.values(this.formulario.controls).forEach((control) =>
-      control.markAsTouched()
-    );
+  
+    // Marcar como 'touched' solo si el formulario es inválido para mostrar errores
+    if (this.formulario.invalid) {
+      Object.values(this.formulario.controls).forEach(control => {
+        control.markAsTouched();
+      });
+    }
   }
+  
 }

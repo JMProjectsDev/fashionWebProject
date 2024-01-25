@@ -9,11 +9,12 @@
     <form [formGroup]="formulario" class="newsletter-form" (ngSubmit)="checkEmail()">
       <div class="flex flex-col">
         <div class="flex flex-row">
-          <input class="w-auto h-auto"
+          <input class="w-full h-auto"
             type="email"
             placeholder="E-mail"
             aria-label="Correo electrónico"
             formControlName="email"
+            #email
           />
           <button            
             aria-label="Suscribirse a la newsletter"
@@ -25,7 +26,7 @@
           <p *ngIf="formulario.controls['email'].errors?.['required']" class="text-red-600">Se requiere un email.</p>
           <p *ngIf="formulario.controls['email'].errors?.['pattern']" class="text-red-600">Introduzca un email válido.</p>          
         </div>
-        <div *ngIf="registroExitoso">
+        <div *ngIf="registroExitoso" class="flex flex-row place-items-center text-wrap w-80">
           <p>Si la dirección de email existe, recibirás un correo de confirmación pronto. ¡Gracias!</p>
         </div>
       </div>      

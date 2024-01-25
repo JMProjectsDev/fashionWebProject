@@ -13,12 +13,13 @@
 
 .newsletter-form {
   display: flex;
+  width: 100%;
   justify-content: center;
   gap: 0.5rem; /* Espacio entre el input y el botón */
   margin-bottom: 1rem; /* Espacio debajo del formulario */
 }
 
-.newsletter-form input {
+.newsletter-form input {  
   padding: 0.5rem;
   border: 1px solid #ccc; /* Borde del input */
   border-radius: 10px; /* Bordes redondeados */
