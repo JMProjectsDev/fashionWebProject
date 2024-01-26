@@ -6,7 +6,7 @@
       colecciones más exclusivas y promociones únicas. <br />
       <b><i>#RevolucionaTuEstilo</i></b>
     </p>
-    <form [formGroup]="formulario" class="newsletter-form" (ngSubmit)="checkEmail()">
+    <form [formGroup]="formulario" class="newsletter-form" (ngSubmit)="checkEmail(email.value)">
       <div class="flex flex-col">
         <div class="flex flex-row">
           <input class="w-full h-auto"
