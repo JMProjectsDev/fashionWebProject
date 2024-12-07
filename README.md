@@ -1,4 +1,4 @@
-# FashionWebProject (En desarrollo)
+# Endless apparel (En desarrollo)
 ![image](https://github.com/JMProyects/fashionWebProject/assets/91617930/45226b0e-8ca7-4e10-b1c3-f48aea514c64)
 
 
