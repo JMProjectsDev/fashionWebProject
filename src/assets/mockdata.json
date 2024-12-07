@@ -33,53 +33,110 @@
   ],
   "top_ventas": {
     "producto1": {
-      "cat":"chaquetas-y-plumas",
+      "cat": "chaquetas-y-plumas",
       "nombre": "Chaqueta plumas 'Pacific Republic' hombre",
       "precio": "29€",
       "img": "../../../assets/img/prod1.png",
       "tipo": "hombre"
     },
     "producto2": {
-      "cat":"jerseis-y-cardigans",
+      "cat": "jerseis-y-cardigans",
       "nombre": "Jerséi lineas horizontales mujer",
       "precio": "18€",
       "img": "../../../assets/img/prod5.png",
       "tipo": "mujer"
     },
     "producto3": {
-      "cat":"pantalones",
+      "cat": "pantalones",
       "nombre": "Cargos con bolsillos laterales hombre",
       "precio": "19,99€",
       "img": "../../../assets/img/prod3.png",
       "tipo": "hombre"
     },
     "producto4": {
-      "cat":"plataformas",
+      "cat": "plataformas",
       "nombre": "Tacones plataforma mujer",
       "precio": "15,50€",
       "img": "../../../assets/img/prod4.png",
       "tipo": "mujer"
     },
     "producto5": {
-      "cat":"sudaderas",
+      "cat": "sudaderas",
       "nombre": "Sudadera 'Rhode Island' hombre",
       "precio": "18€",
       "img": "../../../assets/img/prod6.png",
       "tipo": "hombre"
     },
     "producto6": {
-      "cat":"deportivas",
+      "cat": "deportivas",
       "nombre": "Sneakers urban mujer",
       "precio": "38€",
       "img": "../../../assets/img/prod7.png",
       "tipo": "mujer"
     },
     "producto7": {
-      "cat":"accesorios",
+      "cat": "accesorios",
       "nombre": "Cinturón piel hombre",
       "precio": "5€",
       "img": "../../../assets/img/prod9.png",
-      "tipo": "hombre"      
+      "tipo": "hombre"
+    }
+  },
+  "metodos_pago": {
+    "visa": {
+      "src": "../../../assets/img/visa_icon.svg",
+      "alt": "Image for visa icon"
+    },
+    "mastercard": {
+      "src": "../../../assets/img/mastercard_icon.svg",
+      "alt": "Image for mastercard icon"
+    },
+    "american_express": {
+      "src": "../../../assets/img/american_express_icon.svg",
+      "alt": "Image for american express icon"
+    },
+    "paypal": {
+      "src": "../../../assets/img/paypal_icon.svg",
+      "alt": "Image for paypal icon"
+    },
+    "bizum_icon": {
+      "src": "../../../assets/img/bizum_icon.svg",
+      "alt": "Image for bizum icon"
+    },
+    "apple_pay_icon": {
+      "src": "../../../assets/img/apple_pay_icon.svg",
+      "alt": "Image for apple pay icon"
+    },
+    "google_pay_icon": {
+      "src": "../../../assets/img/google_pay_icon.svg",
+      "alt": "Image for google play icon"
+    }
+  },
+  "redes": {
+    "instagram": {
+      "href": "https://www.instagram.com",
+      "src": "../../../assets/img/instagram.svg",
+      "alt": "Image for instagram badge"
+    },
+    "x": {
+      "href": "https://www.x.com",
+      "src": "../../../assets/img/x.svg",
+      "alt": "Image for x badge"
+    },
+    "facebook": {
+      "href": "https://www.facebook.com",
+      "src": "../../../assets/img/facebook.svg",
+      "alt": "Image for facebook badge"
+    },
+    "youtube": {
+      "href": "https://www.youtube.com",
+      "src": "../../../assets/img/youtube.svg",
+      "alt": "Image for youtube badge"
+    },
+    "tiktok": {
+      "href": "https://www.tiktok.com",
+      "src": "../../../assets/img/tiktok.svg",
+      "alt": "Image for tiktok badge"
     }
   }
 }

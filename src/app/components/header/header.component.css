@@ -1,3 +1,27 @@
+header {
+  position: fixed; /* Mantiene el header fijo en la parte superior */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ocupa todo el ancho */
+  z-index: 50; /* Asegura que el header esté por encima de otros elementos */
+  padding: 0.5rem 1rem; 
+  border: none; /* Asegura que no haya bordes visibles */
+  box-shadow: none; /* Elimina cualquier sombra */
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+header.bg-static {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.8), 
+    rgba(0, 0, 0, 0)
+  );
+}
+
+header.bg-scroll {
+  background: rgba(0, 0, 0, 0.8); /* Fondo opaco al hacer scroll */
+  backdrop-filter: blur(5px); /* Opcional: Reducir el blur */
+}
+
 /* Custom media query*/
 @media screen and (max-width: 1200px) {
   #title {

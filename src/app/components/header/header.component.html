@@ -1,4 +1,4 @@
-<header class="flex flex-row justify-center items-center md:flex-col md:grid md:grid-cols-[50px_1fr_310px_50px_50px] text-center py-2 fixed top-0 left-0 w-full bg-opacity-20 bg-black z-50">
+<header  [ngClass]="{'bg-scroll': scrolled, 'bg-static': !scrolled}" class="flex flex-row justify-center items-center md:flex-col md:grid md:grid-cols-[50px_1fr_310px_50px_50px] text-center py-2 fixed top-0 left-0 w-full z-50">
     <button (click)="toggleMenu()" class="flex flex-col justify-around w-8 h-8 mx-4 md:ml-2 focus:outline-none">
         <span class="block w-full h-1 bg-white rounded-full "></span>
         <span class="block w-full h-1 bg-white rounded-full "></span>

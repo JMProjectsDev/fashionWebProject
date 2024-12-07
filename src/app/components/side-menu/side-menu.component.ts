@@ -40,12 +40,12 @@ export class SideMenuComponent implements OnInit, OnDestroy {
       this.isOpen = isOpen;
     });
 
-    const categoriasData: Categories = (data as any).default;
+    const categoriasData: Categories = data;
     this.categorias_ropa = categoriasData.categorias_ropa;
-    const tipos_zapatillasData: Categories = (data as any).default;
+    const tipos_zapatillasData: Categories = data;
     this.tipos_zapatillas = tipos_zapatillasData.tipos_zapatillas;
 
-    const menuOptionData: Categories = (data as any).default;
+    const menuOptionData: Categories = data;
     this.menuOptionsList = menuOptionData.menuOptionsList;
   }
 
@@ -62,14 +62,14 @@ export class SideMenuComponent implements OnInit, OnDestroy {
     this.slideDirection = gender === 'Hombre' ? 'left' : 'right';
 
     if (gender === 'Hombre') {
-      const categoriasData: Categories = (data as any).default;
+      const categoriasData: Categories = data;
       this.categorias_ropa = categoriasData.categorias_ropa;
-      const tipos_zapatillasData: Categories = (data as any).default;
+      const tipos_zapatillasData: Categories = data;
       this.tipos_zapatillas = tipos_zapatillasData.tipos_zapatillas;
     } else {
-      const categorias_mujerData: Categories = (data as any).default;
+      const categorias_mujerData: Categories = data;
       this.categorias_ropa = categorias_mujerData.categorias_ropa_mujer;
-      const tipos_zapatillas_mujerData: Categories = (data as any).default;
+      const tipos_zapatillas_mujerData: Categories = data;
       this.tipos_zapatillas = tipos_zapatillas_mujerData.tipos_zapatillas_mujer;
     }
   }

@@ -34,91 +34,25 @@
       <div class="footer-section">
         <h5 class="font-black text-xl">Métodos de pago</h5>
         <div class="flex flex-row items-center flex-wrap cards">
-          <img
-            src="../../../assets/img/visa_icon.svg"
-            alt="Image for google play badge"
-            class="w-auto h-10 bg-[#F6F6F6] rounded-lg px-2"
-          />
-          <img
-            src="../../../assets/img/mastercard_icon.svg"
-            alt="Image for google play badge"
-            class="w-auto h-10 bg-[#F6F6F6] rounded-lg px-2"
-          />
-          <img
-            src="../../../assets/img/american express_icon.svg"
-            alt="Image for google play badge"
-            class="w-auto h-10 bg-[#F6F6F6] rounded-lg px-2"
-          />
-          <img
-            src="../../../assets/img/paypal_icon.svg"
-            alt="Image for google play badge"
-            class="w-auto h-10 bg-[#F6F6F6] rounded-lg px-2"
-          />
-          <img
-            src="../../../assets/img/bizum_icon.svg"
-            alt="Image for google play badge"
-            class="w-14 h-10 bg-[#F6F6F6] rounded-lg px-2"
-          />
-          <img
-            src="../../../assets/img/apple_pay_icon.svg"
-            alt="Image for google play badge"
-            class="w-auto h-10 bg-[#F6F6F6] rounded-lg px-2"
-          />
-          <img
-            src="../../../assets/img/google_pay_icon.svg"
-            alt="Image for google play badge"
-            class="w-16 h-10 bg-[#F6F6F6] rounded-lg px-2"
-          />
+          <div *ngFor="let metodos of metodosArray">
+            <img src="{{ metodos.src }}" alt="{{ metodos.alt }}" class="w-16 h-10 bg-[#F6F6F6] rounded-lg px-2"/>
+          </div>
         </div>
       </div>
       <div class="footer-section">
         <h5 class="font-black text-xl">Síguenos!</h5>
         <div class="flex flex-row items-center">
-          <a href="https://www.instagram.com" target="_blank">
-            <img
-              src="../../../assets/img/instagram.svg"
-              alt="Image for instagram badge"
-              class="w-auto h-7 cursor-pointer"
-            />
-          </a>
-          <a href="https://twitter.com" target="_blank">
-            <img
-              src="../../../assets/img/twitterx.svg"
-              alt="Image for x badge"
-              class="w-auto h-7 cursor-pointer"
-            />
-          </a>
-          <a href="https://facebook.com" target="_blank">
-            <img
-              src="../../../assets/img/facebook.svg"
-              alt="Image for facebook badge"
-              class="w-auto h-7 cursor-pointer"
-            />
-          </a>
-          <a href="https://tiktok.com" target="_blank">
-            <img
-              src="../../../assets/img/tiktok.svg"
-              alt="Image for tiktok badge"
-              class="w-auto h-7 cursor-pointer"
-            />
-          </a>
-          <a href="https://youtube.com" target="_blank">
-            <img
-              src="../../../assets/img/youtube.svg"
-              alt="Image for youtube badge"
-              class="w-auto h-7 cursor-pointer"
-            />
-          </a>
+          <a *ngFor="let redes of redesArray" href="{{redes.href}}" target="_blank">
+            <img src="{{redes.src}}" alt="{{redes.alt}}" class="w-auto h-7 cursor-pointer"/>
+          </a>     
         </div>
       </div>
     </div>
   </section>
   <div class="footer-bottom">
     <!-- Enlaces a políticas y selección de idioma/país -->
-    <a href="">Política de privacidad</a>|<a href="">Condiciones de compra</a
-    >|<a href="">Política de cookies</a>|<a href="">Preferencias de cookies</a
-    >|<a href=""><i class="fa-solid fas fa-globe"></i> España</a>|<a href=""
-      >Español</a
-    >
+    <a href="">Política de privacidad</a>|<a href="">Condiciones de compra</a>|
+    <a href="">Política de cookies</a>|<a href="">Preferencias de cookies</a>|
+    <a href=""><i class="fa-solid fas fa-globe"></i> España</a>|<a href="">Español</a>
   </div>
 </footer>

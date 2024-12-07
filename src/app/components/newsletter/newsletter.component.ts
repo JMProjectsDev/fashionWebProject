@@ -1,42 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AlertaService } from 'src/app/alerta.service';
 
 @Component({
   selector: 'app-newsletter',
   templateUrl: './newsletter.component.html',
   styleUrls: ['./newsletter.component.css'],
 })
-export class NewsletterComponent {
-  formulario: FormGroup;
-  email: string = '';
-  registroExitoso: Boolean = false;
-  constructor(private fb: FormBuilder) {
+export class NewsletterComponent {  
+  formulario: FormGroup; 
+  
+  constructor(private fb: FormBuilder, private alertaService: AlertaService) {
     this.formulario = this.fb.group({
       email: [
         '',
-        [
-          Validators.required,
-          Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/),
-        ],
+        {
+          validators: [
+            Validators.required,
+            Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/),
+          ],
+          updateOn: 'submit',
+        },
       ],
     });
   }
 
   checkEmail(email: string) {
-    if (this.formulario.valid && email !== null) {
-      console.log('Email correcto!');
-      this.registroExitoso = true;
+    if (this.formulario.valid) {
+      console.log('Email correcto!', email);
+      this.alertaService.mostrarAlerta('Si la dirección de email existe, recibirás un correo de confirmación pronto. ¡Gracias!', 'success');
       // Enviar datos al backend...
 
       // Resetear el formulario pero no limpiar explícitamente los errores
       this.formulario.reset();
     } else {
-      console.log('Email incorrecto!');
-      this.registroExitoso = false;
-    }
-
-    // Marcar como 'touched' solo si el formulario es inválido para mostrar errores
-    if (this.formulario.invalid) {
+      console.log('Email incorrecto!');      
       Object.values(this.formulario.controls).forEach((control) => {
         control.markAsTouched();
       });

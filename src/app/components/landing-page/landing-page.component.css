@@ -124,3 +124,18 @@
   color: #efffc3;
 }
 
+.alert-float {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 90%;
+  width: auto;
+  z-index: 1050;
+}
+
+@media (min-width: 640px) {
+  .alert-float {
+    max-width: 40%;
+  }
+}

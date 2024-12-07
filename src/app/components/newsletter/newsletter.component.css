@@ -19,18 +19,24 @@
   margin-bottom: 1rem; /* Espacio debajo del formulario */
 }
 
-.newsletter-form input {  
+.newsletter-form input {
   padding: 0.5rem;
-  border: 1px solid #ccc; /* Borde del input */
-  border-radius: 10px; /* Bordes redondeados */
+}
+
+.error-container {
+  min-height: 24px;
+  line-height: 1.5;
+  
+}
+
+.hidden-email {
+  visibility: hidden;
 }
 
 .newsletter-form button {
   padding: 0.8rem;
   background-color: #000;
   color: #fff;
-  border: 1px solid #ccc; /* Sin bordes */
-  border-radius: 10px;
   cursor: pointer;
   height: auto;
 }
