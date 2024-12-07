@@ -12,6 +12,7 @@ import { NewsletterComponent } from './components/newsletter/newsletter.componen
 import { BrandCollabsComponent } from './components/brand-collabs/brand-collabs.component';
 import { TopVentasComponent } from './components/top-ventas/top-ventas.component';
 import { SwiperModule } from 'swiper/angular';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { SwiperModule } from 'swiper/angular';
     NewsletterComponent,
     BrandCollabsComponent,
     TopVentasComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
