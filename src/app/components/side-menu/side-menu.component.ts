@@ -3,14 +3,13 @@ import { MenuService } from 'src/app/menu.service';
 import { Subscription } from 'rxjs';
 import * as data from '../../../assets/mockdata.json';
 import { Categories } from '../../categories';
-
 import { slideAnimation } from '../../animations';
 
 @Component({
   selector: 'app-side-menu',
   templateUrl: './side-menu.component.html',
   styleUrls: ['./side-menu.component.css'],
-  animations: [slideAnimation]
+  animations: [slideAnimation],
 })
 export class SideMenuComponent implements OnInit, OnDestroy {
   //@HostBinding('@fadeInTrigger') fadeInTrigger = true;
@@ -72,5 +71,10 @@ export class SideMenuComponent implements OnInit, OnDestroy {
       const tipos_zapatillas_mujerData: Categories = data;
       this.tipos_zapatillas = tipos_zapatillas_mujerData.tipos_zapatillas_mujer;
     }
+  }
+
+  closeMenu(): void {
+    this.menuService.toggle();
+    console.log('cerrado?');
   }
 }

@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { MenuService } from 'src/app/menu.service';
-
+import { AuthService } from 'src/app/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,10 +13,17 @@ export class HeaderComponent {
   onScroll(): void {
     this.scrolled = window.scrollY > 50; // Detecta si se ha hecho scroll
   }
-  constructor(private menuService: MenuService) {}
+  constructor(
+    private menuService: MenuService,
+    private authService: AuthService
+  ) {}
 
+  formularioAuth() {
+    this.authService.mostrarFormulario();
+    console.log('Abriendo loginForm');
+  }
   toggleMenu() {
     this.menuService.toggle();
-    console.log("Abierto?")
+    console.log('Abierto?');
   }
 }

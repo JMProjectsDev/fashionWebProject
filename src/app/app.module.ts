@@ -12,7 +12,8 @@ import { NewsletterComponent } from './components/newsletter/newsletter.componen
 import { BrandCollabsComponent } from './components/brand-collabs/brand-collabs.component';
 import { TopVentasComponent } from './components/top-ventas/top-ventas.component';
 import { SwiperModule } from 'swiper/angular';
-import { LoginComponent } from './components/login/login.component';
+//import { LoginComponent } from './components/login/login.component';
+import { AuthComponent } from './components/auth/auth.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { LoginComponent } from './components/login/login.component';
     NewsletterComponent,
     BrandCollabsComponent,
     TopVentasComponent,
-    LoginComponent,
+    //LoginComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
