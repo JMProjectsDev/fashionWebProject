@@ -131,7 +131,8 @@
   transform: translateX(-50%);
   max-width: 90%;
   width: auto;
-  z-index: 1050;
+  z-index: 1050;  
+  transition: opacity 0.3s ease-in-out;
 }
 
 @media (min-width: 640px) {

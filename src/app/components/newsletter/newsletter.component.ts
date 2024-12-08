@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AlertaService } from 'src/app/alerta.service';
+import { AlertService } from 'src/app/alert.service';
 
 @Component({
   selector: 'app-newsletter',
@@ -10,7 +10,7 @@ import { AlertaService } from 'src/app/alerta.service';
 export class NewsletterComponent {  
   formulario: FormGroup; 
   
-  constructor(private fb: FormBuilder, private alertaService: AlertaService) {
+  constructor(private fb: FormBuilder, private alertService: AlertService) {
     this.formulario = this.fb.group({
       email: [
         '',
@@ -28,7 +28,7 @@ export class NewsletterComponent {
   checkEmail(email: string) {
     if (this.formulario.valid) {
       console.log('Email correcto!', email);
-      this.alertaService.mostrarAlerta('Si la dirección de email existe, recibirás un correo de confirmación pronto. ¡Gracias!', 'success');
+      this.alertService.mostrarAlerta('Si la dirección de email existe, recibirás un correo de confirmación pronto. ¡Gracias!', 'success');
       // Enviar datos al backend...
 
       // Resetear el formulario pero no limpiar explícitamente los errores
