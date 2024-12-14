@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Alert, AlertService } from 'src/app/alert.service';
-import { AuthService } from 'src/app/auth.service';
-import { MenuService } from 'src/app/menu.service';
+import { Alert, AlertService } from 'src/app/shared/services/alert.service';
+import { AuthService } from 'src/app/auth/services/auth.service';
+import { MenuService } from 'src/app/shared/services/menu.service';
 
 @Component({
   selector: 'app-landing-page',

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import data from '../../../assets/mockdata.json';
-import { MetodosPagoData } from 'src/app/metodosPago';
-import { RedesData } from 'src/app/redes';
+import data from '../../../../assets/mockdata.json';
+import { MetodosPagoData } from 'src/app/shared/interfaces/metodosPago';
+import { RedesData } from 'src/app/shared/interfaces/redes';
 
 @Component({
   selector: 'app-footer',

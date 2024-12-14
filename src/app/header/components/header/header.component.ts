@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
-import { MenuService } from 'src/app/menu.service';
-import { AuthService } from 'src/app/auth.service';
+import { MenuService } from 'src/app/shared/services/menu.service';
+import { AuthService } from 'src/app/auth/services/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -22,6 +22,7 @@ export class HeaderComponent {
     this.authService.mostrarFormulario();
     console.log('Abriendo loginForm');
   }
+  
   toggleMenu() {
     this.menuService.toggle();
     console.log('Abierto?');

@@ -1,6 +1,6 @@
 import { ViewChild, AfterViewInit, Component } from '@angular/core';
-import { Products, ProductsData } from 'src/app/products';
-import data from '../../../assets/mockdata.json';
+import { Products, ProductsData } from 'src/app/shared/interfaces/products';
+import data from '../../../../assets/mockdata.json';
 import { SwiperOptions } from 'swiper';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { SwiperComponent } from 'swiper/angular';

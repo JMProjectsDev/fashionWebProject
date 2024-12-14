@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy, HostBinding } from '@angular/core';
-import { MenuService } from 'src/app/menu.service';
+import { MenuService } from 'src/app/shared/services/menu.service';
 import { Subscription } from 'rxjs';
-import * as data from '../../../assets/mockdata.json';
-import { Categories } from '../../categories';
-import { slideAnimation } from '../../animations';
+import data from '../../../../assets/mockdata.json';
+import { Categories } from '../../../shared/interfaces/categories';
+import { slideAnimation } from '../../../shared/services/animations';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-side-menu',
@@ -32,7 +33,10 @@ export class SideMenuComponent implements OnInit, OnDestroy {
   animationState: number = 0;
   slideDirection: 'left' | 'right' = 'left';
 
-  constructor(public menuService: MenuService) {}
+  constructor(
+    public menuService: MenuService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
     this.subscription = this.menuService.isOpen$.subscribe((isOpen) => {
@@ -71,6 +75,11 @@ export class SideMenuComponent implements OnInit, OnDestroy {
       const tipos_zapatillas_mujerData: Categories = data;
       this.tipos_zapatillas = tipos_zapatillas_mujerData.tipos_zapatillas_mujer;
     }
+  }
+
+  formularioAuth() {
+    this.authService.mostrarFormulario();
+    console.log('Abriendo loginForm');
   }
 
   closeMenu(): void {

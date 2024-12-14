@@ -93,15 +93,15 @@
   /* Aquí puedes ajustar el tamaño de fuente y otros estilos para el contenido del menú */
   .fixed-menu section {
     font-size: 20px;
-    line-height: 35px;
+    line-height: 33px;
   }
 }
 
 /* Media query para pantallas pequeñas como iPhone SE */
 @media (max-width: 375px) {
   .fixed-menu section {
-    font-size: 17px;
-    line-height: 27px;
+    font-size: 15px;
+    line-height: 25px;
   }
 }
 

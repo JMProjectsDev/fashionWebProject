@@ -4,16 +4,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SideMenuComponent } from './components/side-menu/side-menu.component';
-import { LandingPageComponent } from './components/landing-page/landing-page.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { NewsletterComponent } from './components/newsletter/newsletter.component';
-import { BrandCollabsComponent } from './components/brand-collabs/brand-collabs.component';
-import { TopVentasComponent } from './components/top-ventas/top-ventas.component';
+import { HeaderComponent } from './header/components/header/header.component';
+import { SideMenuComponent } from './side-menu/components/side-menu/side-menu.component';
+import { LandingPageComponent } from './landing-page/components/landing-page/landing-page.component';
+import { FooterComponent } from './footer/components/footer/footer.component';
+import { NewsletterComponent } from './newsletter/components/newsletter/newsletter.component';
+import { BrandCollabsComponent } from './brand-collabs/components/brand-collabs/brand-collabs.component';
+import { TopVentasComponent } from './top-ventas/components/top-ventas/top-ventas.component';
 import { SwiperModule } from 'swiper/angular';
 //import { LoginComponent } from './components/login/login.component';
-import { AuthComponent } from './components/auth/auth.component';
+import { AuthComponent } from './auth/components/auth/auth.component';
 
 
 @NgModule({
