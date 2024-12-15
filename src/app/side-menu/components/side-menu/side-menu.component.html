@@ -1,4 +1,6 @@
-<!-- Side menu -->
+ <!-- Overlay to darken page -->
+<div *ngIf="isOpen" class="fixed z-50 left-0 top-0 w-full h-full bg-black opacity-50 transition-opacity duration-500 ease-in-out" (click)="closeMenu()">
+</div>
 <div class="fixed-menu z-50 top-0 h-full flex flex-col justify-start lg:justify-center md:justify-center sm:justify-center w-96 bg-white shadow-md transition-transform duration-500 ease-in-out"
   [class.open]="isOpen">
     
@@ -43,6 +45,4 @@
   </section>
 </div>
 
-<!-- Overlay to darken page -->
-<div *ngIf="isOpen" class="fixed z-40 left-0 top-0 w-full h-full bg-black opacity-50 transition-opacity duration-500 ease-in-out" (click)="closeMenu()">
-</div>
+

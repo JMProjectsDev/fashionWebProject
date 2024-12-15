@@ -14,6 +14,7 @@ import { TopVentasComponent } from './top-ventas/components/top-ventas/top-venta
 import { SwiperModule } from 'swiper/angular';
 //import { LoginComponent } from './components/login/login.component';
 import { AuthComponent } from './auth/components/auth/auth.component';
+import { CartMenuComponent } from './cart-menu/components/cart-menu/cart-menu.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AuthComponent } from './auth/components/auth/auth.component';
     BrandCollabsComponent,
     TopVentasComponent,
     //LoginComponent,
-    AuthComponent,
+    AuthComponent,    
+    CartMenuComponent,
   ],
   imports: [
     BrowserModule,

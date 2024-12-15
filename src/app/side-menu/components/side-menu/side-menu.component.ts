@@ -3,7 +3,7 @@ import { MenuService } from 'src/app/shared/services/menu.service';
 import { Subscription } from 'rxjs';
 import data from '../../../../assets/mockdata.json';
 import { Categories } from '../../../shared/interfaces/categories';
-import { slideAnimation } from '../../../shared/services/animations';
+import { slideAnimation } from '../../../shared/effects/animations';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
@@ -83,7 +83,7 @@ export class SideMenuComponent implements OnInit, OnDestroy {
   }
 
   closeMenu(): void {
-    this.menuService.toggle();
-    console.log('cerrado?');
+    this.menuService.toggleSideMenu();
+    console.log('cerrando side menu');
   }
 }

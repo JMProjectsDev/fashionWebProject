@@ -1,5 +1,5 @@
 <header  [ngClass]="{'bg-scroll': scrolled, 'bg-static': !scrolled}" class="flex flex-row justify-center items-center md:flex-col md:grid md:grid-cols-[50px_1fr_310px_50px_50px] text-center py-2 fixed top-0 left-0 w-full z-50">
-    <button (click)="toggleMenu()" class="flex flex-col justify-around w-8 h-8 mx-4 md:ml-2 focus:outline-none">
+    <button (click)="toggleSideMenu()" class="flex flex-col justify-around w-8 h-8 mx-4 md:ml-2 focus:outline-none">
         <span class="block w-full h-1 bg-white rounded-full "></span>
         <span class="block w-full h-1 bg-white rounded-full "></span>
         <span class="block w-full h-1 bg-white rounded-full "></span>
@@ -13,5 +13,5 @@
     </div>
     <a (click)="formularioAuth()" class="hidden md:flex md:flex-row md:place-items-center"><i class="fa-solid fa-user text-white hover:text-black hover:cursor-pointer transition duration-300"></i></a>
     <!-- <a routerLink="/login" routerLinkActive="active" class="hidden md:flex md:flex-row md:place-items-center"><i class="fa-solid fa-user text-white hover:text-black hover:cursor-pointer transition duration-300"></i></a>   -->
-    <a class="hidden md:flex md:flex-row md:place-items-center"><i class="fa-solid fa-bag-shopping text-white hover:text-black hover:cursor-pointer transition duration-300" ></i></a>
+    <a (click)="toggleCartMenu()" class="hidden md:flex md:flex-row md:place-items-center"><i class="fa-solid fa-bag-shopping text-white hover:text-black hover:cursor-pointer transition duration-300" ></i></a>
 </header>

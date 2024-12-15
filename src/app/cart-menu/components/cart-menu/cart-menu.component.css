@@ -1,0 +1,20 @@
+/* Estilos base para el menú cesta lateral */
+.fixed-menu {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  right: 0;
+  width: 96; /* Ancho por defecto */
+  background: white;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Se oculta el menú cesta lateral por defecto */
+.fixed-menu {
+  transform: translateX(100%);
+}
+
+/* Se muestra el menú lateral cuando cartOpen es true */
+.fixed-menu.open {
+  transform: translateX(0);
+}

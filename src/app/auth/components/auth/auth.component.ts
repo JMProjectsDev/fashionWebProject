@@ -69,17 +69,18 @@ export class AuthComponent {
     this.isRegister = !this.isRegister;
     const password = this.authForm.get('password');
     const confirmPassword = this.authForm.get('confirmPassword');
-
-    if(this.isRegister){
+  
+    if (this.isRegister) {      
       password?.setValidators([Validators.required, Validators.minLength(6)]);
       confirmPassword?.setValidators([Validators.required, Validators.minLength(6)]);
-    } else {
-      password?.clearValidators();
+    } else {      
+      password?.setValidators([Validators.required]); //Si se limpian los validators no funciona al cambiar entre login y registro.
       confirmPassword?.clearValidators();
     }
+  
     password?.updateValueAndValidity();
     confirmPassword?.updateValueAndValidity();
-  }
+  }  
 
   checkCredentials(email: string, password: string, confirmPassword: string) {
     if (this.authForm.valid) {

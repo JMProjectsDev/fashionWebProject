@@ -23,8 +23,13 @@ export class HeaderComponent {
     console.log('Abriendo loginForm');
   }
   
-  toggleMenu() {
-    this.menuService.toggle();
-    console.log('Abierto?');
+  toggleSideMenu() {
+    this.menuService.toggleSideMenu();
+    console.log('Abriendo side menu');
+  }
+
+  toggleCartMenu() {
+    this.menuService.toggleCartMenu();
+    console.log('Abriendo cart menu');
   }
 }
