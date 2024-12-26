@@ -70,12 +70,14 @@ export class AuthComponent {
     const password = this.authForm.get('password');
     const confirmPassword = this.authForm.get('confirmPassword');
   
-    if (this.isRegister) {      
+    if (this.isRegister) {
       password?.setValidators([Validators.required, Validators.minLength(6)]);
       confirmPassword?.setValidators([Validators.required, Validators.minLength(6)]);
-    } else {      
+    } else {
       password?.setValidators([Validators.required]); //Si se limpian los validators no funciona al cambiar entre login y registro.
       confirmPassword?.clearValidators();
+      confirmPassword?.reset();
+      this.authForm.setErrors(null);
     }
   
     password?.updateValueAndValidity();
