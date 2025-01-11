@@ -2,11 +2,11 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; /* Ocupa todo el ancho */
-  z-index: 50; /* Asegura que el header esté por encima de otros elementos */
+  width: 100%; 
+  z-index: 50; 
   padding: 0.5rem 1rem; 
-  border: none; /* Asegura que no haya bordes visibles */
-  box-shadow: none; /* Elimina cualquier sombra */
+  border: none;
+  box-shadow: none;
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
@@ -22,7 +22,6 @@ header.bg-scroll {
   backdrop-filter: blur(5px); 
 }
 
-/* Custom media query*/
 @media screen and (max-width: 1200px) {
   #title {
     margin-left: 0;
