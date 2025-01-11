@@ -1,5 +1,5 @@
 header {
-  position: fixed; /* Mantiene el header fijo en la parte superior */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%; /* Ocupa todo el ancho */
@@ -19,7 +19,7 @@ header.bg-static {
 
 header.bg-scroll {
   background: rgba(0, 0, 0, 0.8); /* Fondo opaco al hacer scroll */
-  backdrop-filter: blur(5px); /* Opcional: Reducir el blur */
+  backdrop-filter: blur(5px); 
 }
 
 /* Custom media query*/

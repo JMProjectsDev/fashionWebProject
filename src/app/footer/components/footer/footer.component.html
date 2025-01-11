@@ -2,32 +2,26 @@
   <section class="flex flex-row justify-around">
     <div class="footer-section flex flex-col space-y-2">
       <h5 class="font-black text-xl">Ayuda</h5>
-      <a href="">Preguntas frecuentes</a><a href="">Política de envíos</a
-      ><a href="">Estado de mi pedido</a><a href="">Cómo devolver</a
-      ><a href="">Tramitar devolución</a><a href="">Tarjeta regalo</a>
+      <a class="lg:text-base md:text-sm" href="">Preguntas frecuentes</a><a class="lg:text-base md:text-sm" href="">Política de envíos</a>
+      <a class="lg:text-base md:text-sm" href="">Estado de mi pedido</a><a class="lg:text-base md:text-sm" href="">Cómo devolver</a>
+      <a class="lg:text-base md:text-sm" href="">Tramitar devolución</a><a class="lg:text-base md:text-sm" href="">Tarjeta regalo</a>
     </div>
     <div class="footer-section flex flex-col space-y-2">
       <h5 class="font-black text-xl">Empresa</h5>
-      <a href="">Quiénes somos</a><a href="">Localizador de tiendas</a
-      ><a href="">Trabaja con nosotros</a>
+      <a class="lg:text-base md:text-sm" href="">Quiénes somos</a><a class="lg:text-base md:text-sm" href="">Localizador de tiendas</a>
+      <a class="lg:text-base md:text-sm" href="">Trabaja con nosotros</a>
     </div>
     <div class="flex flex-col justify-start">
       <div class="footer-section">
         <h5 class="font-black text-xl">Nuestra app</h5>
         <div class="flex flex-row items-center">
           <a href="https://www.apple.com/es/app-store/" target="_blank">
-            <img
-              src="../../../assets/img/appStore.svg"
-              alt="Image for google play badge"
-              class="w-auto h-11 cursor-pointer"
-            />
+            <img src="../../../assets/img/appStore.svg"alt="Image for google play badge"
+              class="w-auto h-11 cursor-pointer"/>
           </a>
           <a href="https://play.google.com" target="_blank">
-            <img
-              src="../../../assets/img/google-play-badge.png"
-              alt="Image for google play badge"
-              class="w-auto h-14 cursor-pointer"
-            />
+            <img src="../../../assets/img/google-play-badge.png" alt="Image for google play badge"
+              class="w-auto h-14 cursor-pointer"/>
           </a>
         </div>
       </div>
@@ -44,7 +38,7 @@
         <div class="flex flex-row items-center">
           <a *ngFor="let redes of redesArray" href="{{redes.href}}" target="_blank">
             <img src="{{redes.src}}" alt="{{redes.alt}}" class="w-auto h-7 cursor-pointer"/>
-          </a>     
+          </a>
         </div>
       </div>
     </div>

@@ -86,4 +86,9 @@ export class SideMenuComponent implements OnInit, OnDestroy {
     this.menuService.toggleSideMenu();
     console.log('cerrando side menu');
   }
+
+  toggleCartMenu() {
+    this.menuService.toggleCartMenu();
+    console.log('Abriendo cart menu');
+  }
 }
