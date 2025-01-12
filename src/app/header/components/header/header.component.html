@@ -1,12 +1,19 @@
-<header [ngClass]="{'bg-scroll': scrolled && !isSearchRoute,'bg-static': !scrolled && !isSearchRoute, 'bg-white text-black': isSearchRoute, 'bg-transparent text-white': !isSearchRoute}"
-  class="flex flex-row justify-center items-center md:flex-col md:grid md:grid-cols-[50px_1fr_310px_50px_50px] text-center py-2 fixed top-0 left-0 w-full z-50">
+<header [ngClass]="{
+    'bg-scroll': scrolled && !isSearchRoute,
+    'bg-static': !scrolled && !isSearchRoute,
+    'bg-white text-black': isSearchRoute,
+    'bg-transparent text-white': !isSearchRoute,
+    'md:grid-cols-[50px_1fr_310px_50px_50px]': !isSearchRoute,
+    'md:grid-cols-[50px_1fr_50px_50px]': isSearchRoute
+  }"
+  class="flex flex-row justify-center items-center md:flex-col md:grid text-center py-2 fixed top-0 left-0 w-full z-50">
     <button (click)="toggleSideMenu()" class="flex flex-col justify-around w-8 h-8 mx-4 md:ml-2 focus:outline-none">
         <span class="block w-full h-1 rounded-full" [ngClass]="{'bg-black': isSearchRoute, 'bg-white': !isSearchRoute}"></span>
         <span class="block w-full h-1 rounded-full" [ngClass]="{'bg-black': isSearchRoute, 'bg-white': !isSearchRoute}"></span>
         <span class="block w-full h-1 rounded-full" [ngClass]="{'bg-black': isSearchRoute, 'bg-white': !isSearchRoute}"></span>
     </button>
 
-    <h1 id="title" class="text-4xl font-semibold cursor-pointer md:ml-[380px]" [ngClass]="{'text-black': isSearchRoute, 'text-white': !isSearchRoute}"
+    <h1 id="title" class="text-4xl font-semibold cursor-pointer" [ngClass]="{'text-black md:ml-[69px]': isSearchRoute, 'text-white md:ml-[380px]': !isSearchRoute}"
         (click)="navigateBack()">Endless Apparel
     </h1>
 

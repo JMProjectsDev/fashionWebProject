@@ -1,18 +1,20 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { MenuService } from 'src/app/shared/services/menu.service';
 import { AuthService } from 'src/app/auth/services/auth.service';
-import { Router } from '@angular/router';
-import { NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   isSearchRoute: boolean = false;
   scrolled = false;
   scrollEnabled = true;
+
+  private subscriptions: Subscription = new Subscription();
 
   constructor(
     private menuService: MenuService,
@@ -29,33 +31,39 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     // Detectar cambios de ruta
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.isSearchRoute = this.router.url.includes('/search');        
-        this.scrollEnabled = !this.isSearchRoute;        
-        if (this.isSearchRoute) {
-          this.scrolled = false;
+    this.subscriptions.add(
+      this.router.events.subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          this.isSearchRoute = this.router.url.includes('/search');
+          this.scrollEnabled = !this.isSearchRoute;
+          if (this.isSearchRoute) {
+            this.scrolled = false;
+          }
         }
-      }
-    });
+      })
+    );
   }
 
-  navigateBack(): void {
-    this.router.navigate(['/']);
-  }
-
-  formularioAuth(): void {
-    this.authService.mostrarFormulario();
-    console.log('Abriendo loginForm');
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
   }
 
   toggleSideMenu(): void {
     this.menuService.toggleSideMenu();
-    console.log('Abriendo side menu');
+    console.log('Menú lateral abierto/cerrado');
   }
 
   toggleCartMenu(): void {
     this.menuService.toggleCartMenu();
-    console.log('Abriendo cart menu');
+    console.log('Carrito abierto/cerrado');
+  }
+
+  formularioAuth(): void {
+    this.authService.mostrarFormulario();
+    console.log('Formulario de inicio de sesión solicitado');
+  }
+
+  navigateBack(): void {
+    this.router.navigate(['/']);
   }
 }
