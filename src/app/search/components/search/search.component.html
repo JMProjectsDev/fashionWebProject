@@ -1,6 +1,7 @@
+<section class="px-14 py-8">
 <form [formGroup]="searchForm">
-  <section class="flex flex-col place-items-start p-6">
-    <div class="flex flex-col items-start p-6 w-full">
+  <section class="flex flex-col place-items-start">
+    <div class="flex flex-col items-start p-8 w-full">
       <div class="flex flex-row items-center w-full">
         <i class="fa-solid fa-magnifying-glass text-3xl"></i>
         <input type="text" placeholder="¿Qué estás buscando?" class="pl-2 text-4xl focus:outline-none cursor-pointer w-full"
@@ -13,3 +14,42 @@
     </div>
   </section>
 </form>
+
+<section class="flex flex-col place-items-start">
+  <div class="flex flex-col items-start justify-center z-40 px-8 py-2">
+    <h1 class="text-black font-bold mb-4 text-3xl">
+     Últimas novedades
+    </h1>
+    <img src="../../../assets/img/Arrow 2.svg" alt="image arrow for title" class="w-24"/>
+  </div>
+
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-8 place-content-center place-items-center">    
+    <div *ngFor="let producto of productosArray" class="flex flex-col">
+      <a 
+        href="/{{ producto.tipo }}/{{ producto.cat }}/{{ producto.nombre }}" 
+        class="product-card block w-full cursor-pointer"
+      >
+        <div class="flex flex-col place-content-center place-items-center drop-shadow-xl transition-all duration-300 p-4 lg:p-6" id="product-card-h">
+          <div class="bg-slate-50 rounded-t-3xl flex justify-center items-center lg:w-96 image-card">
+            <img src="{{ producto.img }}" alt="Image for top sell products" class="h-72 p-2 drop-shadow-md"/>
+          </div>
+          <div class="bg-black rounded-b-3xl p-2 lg:grid lg:grid-cols-[170px_127px_87px] item-card place-items-center place-content-center h-24 lg:w-96">
+            <p class="text-white font-sans font-semibold p-3" id="prod_name">
+              {{ producto.nombre }}
+            </p>
+            <p class="text-white font-sans text-3xl font-semibold" id="prod_price">
+              {{ producto.precio }}
+            </p>
+            <img src="../../../assets/img/Arrow 2.svg" alt="image arrow for title" class="drop-shadow-2xl w-auto h-8 px-4 text-center"/>
+          </div>
+        </div>
+      </a>
+    </div>  
+  </section>
+  
+  
+  
+  
+</section>
+
+</section>
