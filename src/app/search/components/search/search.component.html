@@ -1,55 +1,85 @@
-<section class="px-14 py-8">
-<form [formGroup]="searchForm">
-  <section class="flex flex-col place-items-start">
-    <div class="flex flex-col items-start p-8 w-full">
-      <div class="flex flex-row items-center w-full">
-        <i class="fa-solid fa-magnifying-glass text-3xl"></i>
-        <input type="text" placeholder="¿Qué estás buscando?" class="pl-2 text-4xl focus:outline-none cursor-pointer w-full"
-          formControlName="searchTerm"/>
-        <button (click)="clearSearch()">
-          <img src="../../../../assets/img/btn_delete_search.svg" alt="delete" class="cursor-pointer ml-2 w-10"/>
-        </button>
-      </div>
-      <hr class="h-px w-full mt-4 bg-gray-200 border-0 dark:bg-gray-700" />
-    </div>
-  </section>
-</form>
-
-<section class="flex flex-col place-items-start">
-  <div class="flex flex-col items-start justify-center z-40 px-8 py-2">
-    <h1 class="text-black font-bold mb-4 text-3xl">
-     Últimas novedades
-    </h1>
-    <img src="../../../assets/img/Arrow 2.svg" alt="image arrow for title" class="w-24"/>
-  </div>
-
-  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-8 place-content-center place-items-center">    
-    <div *ngFor="let producto of productosArray" class="flex flex-col">
-      <a 
-        href="/{{ producto.tipo }}/{{ producto.cat }}/{{ producto.nombre }}" 
-        class="product-card block w-full cursor-pointer"
-      >
-        <div class="flex flex-col place-content-center place-items-center drop-shadow-xl transition-all duration-300 p-4 lg:p-6" id="product-card-h">
-          <div class="bg-slate-50 rounded-t-3xl flex justify-center items-center lg:w-96 image-card">
-            <img src="{{ producto.img }}" alt="Image for top sell products" class="h-72 p-2 drop-shadow-md"/>
-          </div>
-          <div class="bg-black rounded-b-3xl p-2 lg:grid lg:grid-cols-[170px_127px_87px] item-card place-items-center place-content-center h-24 lg:w-96">
-            <p class="text-white font-sans font-semibold p-3" id="prod_name">
-              {{ producto.nombre }}
-            </p>
-            <p class="text-white font-sans text-3xl font-semibold" id="prod_price">
-              {{ producto.precio }}
-            </p>
-            <img src="../../../assets/img/Arrow 2.svg" alt="image arrow for title" class="drop-shadow-2xl w-auto h-8 px-4 text-center"/>
-          </div>
+<section class="px-4 py-8 md:px-10 lg:px-14">
+  <form [formGroup]="searchForm">
+    <section class="flex flex-col items-start">
+      <div class="flex flex-col items-start p-4 w-full">
+        <div class="flex flex-row items-center w-full">
+          <i class="fa-solid fa-magnifying-glass text-2xl md:text-3xl"></i>
+          <input
+            type="text"
+            placeholder="¿Qué estás buscando?"
+            class="pl-2 text-xl md:text-2xl lg:text-3xl focus:outline-none cursor-pointer w-full"
+            formControlName="searchTerm"
+          />
+          <button (click)="clearSearch()">
+            <img
+              src="../../../../assets/img/btn_delete_search.svg"
+              alt="delete"
+              class="cursor-pointer ml-2 w-8 md:w-10"
+            />
+          </button>
         </div>
-      </a>
-    </div>  
-  </section>
-  
-  
-  
-  
-</section>
+        <hr class="h-px w-full mt-4 bg-gray-200 border-0 dark:bg-gray-700" />
+      </div>
+    </section>
+  </form>
 
+  <section class="flex flex-col">
+    <div class="flex flex-col items-start justify-center z-40 px-4 py-2">
+      <h1 class="text-black font-bold mb-4 text-2xl md:text-3xl">
+        Últimas novedades
+      </h1>
+      <img
+        src="../../../assets/img/Arrow 2.svg"
+        alt="image arrow for title"
+        class="w-16 md:w-24"
+      />
+    </div>
+
+    <section
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 xl:gap-4 px-4 place-content-center place-items-center"
+    >
+      <div *ngFor="let producto of productosArray" class="flex flex-col">
+        <a
+          href="/{{ producto.tipo }}/{{ producto.cat }}/{{ producto.nombre }}"
+          class="product-card block w-full cursor-pointer"
+        >
+          <div
+            class="flex flex-col place-content-center place-items-center drop-shadow-xl transition-all duration-300 p-4 lg:p-6"
+            id="product-card-h"
+          >
+            <div
+              class="bg-slate-50 rounded-t-3xl flex justify-center items-center w-full max-w-xs lg:max-w-sm xl:max-w-sm 2xl:max-w-sm image-card"
+            >
+              <img
+                src="{{ producto.img }}"
+                alt="Image for top sell products"
+                class="h-48 md:h-60 lg:h-72 p-2 drop-shadow-md"
+              />
+            </div>
+            <div
+              class="bg-black rounded-b-3xl p-2 grid grid-cols-[1fr_auto] lg:grid-cols-[170px_127px_87px] xl:grid-cols-[1fr_auto_auto] item-card place-items-center place-content-center h-20 lg:h-24 w-full max-w-xs lg:max-w-sm"
+            >
+              <p
+                class="text-white font-sans font-semibold px-3 text-sm lg:text-base"
+                id="prod_name"
+              >
+                {{ producto.nombre }}
+              </p>
+              <p
+                class="text-white font-sans text-lg lg:text-3xl font-semibold"
+                id="prod_price"
+              >
+                {{ producto.precio }}
+              </p>
+              <img
+                src="../../../assets/img/Arrow 2.svg"
+                alt="image arrow for title"
+                class="drop-shadow-2xl w-5 md:w-6 lg:w-auto h-6 md:h-7 lg:h-8 px-2 lg:px-4 text-center"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </section>
 </section>
