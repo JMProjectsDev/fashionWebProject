@@ -1,7 +1,7 @@
 .footer-container {
     width: 100%;
     padding: 2rem 2rem 0rem 2rem;
-    background-color: white; /* Ajusta el color de fondo según tu diseño */
+    background-color: white;
     box-sizing: border-box;
   }
   
@@ -16,17 +16,16 @@
   .footer-section a {
     color: #898989;
   }
-  
-  /* Asegúrate de que los logos de pago y los iconos de redes sociales tengan el tamaño adecuado */
+    
   .footer-section img {
     margin-right: 0.5rem;
   }
   
   .footer-bottom {
-    border-top: 1px solid #d1d1d1; /* Color de la línea */
+    border-top: 1px solid #d1d1d1;
     padding: 1rem 0;
-    text-align: center; /* Centra los enlaces en la parte inferior */
-    font-size: 0.875rem; /* Tamaño de fuente más pequeño */
+    text-align: center;
+    font-size: 0.875rem; 
     color: #898989;
   }
   

@@ -39,13 +39,13 @@
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 xl:gap-4 px-4 place-content-center place-items-center"
     >
       <div *ngFor="let producto of productosArray" class="flex flex-col">
-        <a
-          href="/{{ producto.tipo }}/{{ producto.cat }}/{{ producto.nombre }}"
-          class="product-card block w-full cursor-pointer"
+        <div
+          class="flex flex-col place-content-center place-items-center drop-shadow-xl p-4 lg:p-6"
+          
         >
-          <div
-            class="flex flex-col place-content-center place-items-center drop-shadow-xl transition-all duration-300 p-4 lg:p-6"
-            id="product-card-h"
+          <a
+            href="/{{ producto.tipo }}/{{ producto.cat }}/{{ producto.nombre }}"
+            class="product-card block w-full cursor-pointer transition-all duration-300" id="product-card-h"
           >
             <div
               class="bg-slate-50 rounded-t-3xl flex justify-center items-center w-full max-w-xs lg:max-w-sm xl:max-w-sm 2xl:max-w-sm image-card"
@@ -77,9 +77,10 @@
                 class="drop-shadow-2xl w-5 md:w-6 lg:w-auto h-6 md:h-7 lg:h-8 px-2 lg:px-4 text-center"
               />
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     </section>
   </section>
+  <br /><br />
 </section>
