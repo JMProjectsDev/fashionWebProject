@@ -35,47 +35,30 @@
       />
     </div>
 
-    <section
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 xl:gap-4 px-4 place-content-center place-items-center"
-    >
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 lg:gap-8 px-2 place-content-center place-items-center">
       <div *ngFor="let producto of productosArray" class="flex flex-col">
-        <div
-          class="flex flex-col place-content-center place-items-center drop-shadow-xl p-4 lg:p-6"
-          
-        >
-          <a
-            href="/{{ producto.tipo }}/{{ producto.cat }}/{{ producto.nombre }}"
-            class="product-card block w-full cursor-pointer transition-all duration-300" id="product-card-h"
-          >
-            <div
-              class="bg-slate-50 rounded-t-3xl flex justify-center items-center w-full max-w-xs lg:max-w-sm xl:max-w-sm 2xl:max-w-sm image-card"
-            >
-              <img
-                src="{{ producto.img }}"
-                alt="Image for top sell products"
-                class="h-48 md:h-60 lg:h-72 p-2 drop-shadow-md"
-              />
-            </div>
-            <div
-              class="bg-black rounded-b-3xl p-2 grid grid-cols-[1fr_auto] lg:grid-cols-[170px_127px_87px] xl:grid-cols-[1fr_auto_auto] item-card place-items-center place-content-center h-20 lg:h-24 w-full max-w-xs lg:max-w-sm"
-            >
-              <p
-                class="text-white font-sans font-semibold px-3 text-sm lg:text-base"
-                id="prod_name"
-              >
-                {{ producto.nombre }}
-              </p>
-              <p
-                class="text-white font-sans text-lg lg:text-3xl font-semibold"
-                id="prod_price"
-              >
-                {{ producto.precio }}
-              </p>
-              <img
-                src="../../../assets/img/Arrow 2.svg"
-                alt="image arrow for title"
-                class="drop-shadow-2xl w-5 md:w-6 lg:w-auto h-6 md:h-7 lg:h-8 px-2 lg:px-4 text-center"
-              />
+        <div class="flex flex-col items-center justify-center">
+          <a href="/{{ producto.tipo }}/{{ producto.cat }}/{{ producto.nombre }}" class="block w-full sm:w-72 md:w-80 lg:w-96 product-card">
+            <div class="flex flex-col items-center p-4 drop-shadow-xl lg:hover:scale-105 transition-all duration-300 cursor-pointer">
+              <div class="bg-slate-50 rounded-t-3xl flex justify-center items-center w-full">
+                <img
+                  [src]="producto.img"
+                  alt="Image for top sell products"
+                  class="w-full max-w-full h-72 object-contain p-2 drop-shadow-md"
+                />
+              </div>
+
+              <div class="bg-black rounded-b-3xl w-full p-2 h-24 flex flex-col gap-2 items-center justify-center sm:flex-row sm:justify-between sm:items-center md:grid md:grid-cols-[150px_1fr] md:items-center md:justify-items-center lg:grid-cols-[150px_1fr]">
+                <p class="text-white font-sans font-semibold text-base" id="prod_name">{{ producto.nombre }}</p>
+                <div class="flex flex-row items-center gap-4 justify-center">
+                  <p class="text-white font-sans text-xl lg:text-2xl font-semibold" id="prod_price">{{ producto.precio }}</p>
+                  <img
+                    src="../../../assets/img/Arrow 2.svg"
+                    alt="image arrow for title"
+                    class="drop-shadow-2xl w-5 md:w-6 lg:w-auto h-6 md:h-7 lg:h-8 text-center"
+                  />
+                </div>
+              </div>
             </div>
           </a>
         </div>
