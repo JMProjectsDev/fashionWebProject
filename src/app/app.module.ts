@@ -16,6 +16,7 @@ import { SwiperModule } from 'swiper/angular';
 import { AuthComponent } from './auth/components/auth/auth.component';
 import { CartMenuComponent } from './cart-menu/components/cart-menu/cart-menu.component';
 import { SearchComponent } from './search/components/search/search.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { SearchComponent } from './search/components/search/search.component';
     TopVentasComponent,
     //LoginComponent,
     AuthComponent,    
-    CartMenuComponent, SearchComponent,
+    CartMenuComponent, SearchComponent, MainLayoutComponent,
   ],
   imports: [
     BrowserModule,
