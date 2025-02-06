@@ -1,0 +1,12 @@
+.btn-auth {
+  width: auto;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.btn-auth:hover {
+  background-color: #000;
+  color: white;
+}

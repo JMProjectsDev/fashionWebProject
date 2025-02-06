@@ -12,12 +12,13 @@ import { NewsletterComponent } from './newsletter/components/newsletter/newslett
 import { BrandCollabsComponent } from './brand-collabs/components/brand-collabs/brand-collabs.component';
 import { TopVentasComponent } from './top-ventas/components/top-ventas/top-ventas.component';
 import { SwiperModule } from 'swiper/angular';
+import { HttpClientModule } from '@angular/common/http';
 //import { LoginComponent } from './components/login/login.component';
 import { AuthComponent } from './auth/components/auth/auth.component';
 import { CartMenuComponent } from './cart-menu/components/cart-menu/cart-menu.component';
 import { SearchComponent } from './search/components/search/search.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
-
+import { UsersComponent } from './users/components/users/users.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,11 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
     BrandCollabsComponent,
     TopVentasComponent,
     //LoginComponent,
-    AuthComponent,    
-    CartMenuComponent, SearchComponent, MainLayoutComponent,
+    AuthComponent,
+    CartMenuComponent,
+    SearchComponent,
+    MainLayoutComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,7 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
     BrowserAnimationsModule,
     ReactiveFormsModule,
     SwiperModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

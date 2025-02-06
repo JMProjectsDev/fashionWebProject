@@ -5,11 +5,9 @@ export function passwordsMatchValidator(): ValidatorFn {
     const password = control.get('password')?.value;
     const confirmPassword = control.get('confirmPassword')?.value;
 
-    if (password && confirmPassword && password !== confirmPassword) {
-      // Error si las contraseñas no coinciden.
+    if (password && confirmPassword && password !== confirmPassword) {    
       return { passwordsDontMatch: true };
-    }
-    // No hay error si coinciden o aún no se ha introducido.
+    }    
     return null;
   };
 }

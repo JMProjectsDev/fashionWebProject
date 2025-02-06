@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { passwordsMatchValidator } from '../../validators/passwordsMatchValidators';
 
@@ -15,33 +16,41 @@ export class AuthComponent {
   showPassword = false;
   showConfirmPassword = false;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
-    this.authForm = this.fb.group({
-      email: [
-        '',
-        {
-          validators: [
-            Validators.required,
-            Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/),
-          ],
-          updateOn: 'submit',
-        },
-      ],
-      password: [
-        '',
-        {
-          validators: [Validators.required],
-          updateOn: 'submit',
-        },
-      ],
-      confirmPassword: [
-        '',
-        {          
-          updateOn: 'submit',
-        },
-      ],
-    },{
-      validators: [passwordsMatchValidator()]
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private route: ActivatedRoute
+  ) {
+    this.authForm = this.fb.group(
+      {
+        email: [
+          '',
+          {
+            validators: [
+              Validators.required,
+              Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/),
+            ],
+            updateOn: 'submit',
+          },
+        ],
+        password: [
+          '',
+          {
+            validators: [Validators.required],
+            updateOn: 'submit',
+          },
+        ],
+        confirmPassword: ['', { updateOn: 'submit' }],
+      },
+      {
+        validators: [passwordsMatchValidator()],
+      }
+    );
+
+    this.route.queryParams.subscribe((params) => {
+      if (params['token']) {
+        this.authService.saveToken(params['token']);
+      }
     });
   }
 
@@ -49,7 +58,7 @@ export class AuthComponent {
     this.closing = true;
     setTimeout(() => {
       this.authService.ocultarFormulario();
-      this.closing = false; // Reinicia el estado después del cierre
+      this.closing = false;
     }, 300);
   }
 
@@ -57,11 +66,11 @@ export class AuthComponent {
     event.stopPropagation();
   }
 
-  togglePasswordVisibility(){
+  togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }
 
-  toggleConfirmPasswordVisibility(){
+  toggleConfirmPasswordVisibility() {
     this.showConfirmPassword = !this.showConfirmPassword;
   }
 
@@ -69,36 +78,44 @@ export class AuthComponent {
     this.isRegister = !this.isRegister;
     const password = this.authForm.get('password');
     const confirmPassword = this.authForm.get('confirmPassword');
-  
+
     if (this.isRegister) {
       password?.setValidators([Validators.required, Validators.minLength(6)]);
-      confirmPassword?.setValidators([Validators.required, Validators.minLength(6)]);
+      confirmPassword?.setValidators([
+        Validators.required,
+        Validators.minLength(6),
+      ]);
     } else {
-      password?.setValidators([Validators.required]); //Si se limpian los validators no funciona al cambiar entre login y registro.
+      password?.setValidators([Validators.required]);
       confirmPassword?.clearValidators();
       confirmPassword?.reset();
       this.authForm.setErrors(null);
     }
-  
+
     password?.updateValueAndValidity();
     confirmPassword?.updateValueAndValidity();
-  }  
+  }
 
   checkCredentials(email: string, password: string, confirmPassword: string) {
     if (this.authForm.valid) {
       if (this.isRegister) {
-        if(password != confirmPassword){
+        if (password !== confirmPassword) {
           console.log('Las contraseñas no coinciden');
         } else {
-          console.log('Registro:', { email, password, confirmPassword });          
+          this.authService.register(email, password).subscribe({
+            next: () => alert('Registro exitoso, ahora puedes iniciar sesión.'),
+            error: (err) => alert(err.error.msg || 'Error en el registro'),
+          });
         }
-        
       } else {
-        console.log('Login:', { email, password });
+        this.authService.login(email, password).subscribe({
+          next: () => alert('Inicio de sesión exitoso'),
+          error: (err) =>
+            alert(err.error.msg || 'Error en el inicio de sesión'),
+        });
       }
-      // Resetear el formulario pero no limpiar explícitamente los errores
       this.authForm.reset();
-    } else {      
+    } else {
       console.log('Formulario inválido');
       Object.values(this.authForm.controls).forEach((control) => {
         control.markAsTouched();
@@ -107,7 +124,6 @@ export class AuthComponent {
   }
 
   loginWithGoogle(): void {
-    console.log('Iniciar sesión con Google');
-    // Aquí iría la integración con el SDK de Google
+    this.authService.loginWithGoogle();
   }
 }

@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isSearchRoute: boolean = false;
   scrolled = false;
   scrollEnabled = true;
+  isAuthenticated = false;
 
   private subscriptions: Subscription = new Subscription();
 
@@ -25,12 +26,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   @HostListener('window:scroll', [])
   onScroll(): void {
     if (this.scrollEnabled) {
-      this.scrolled = window.scrollY > 50; // Detecta si se ha hecho scroll
+      this.scrolled = window.scrollY > 50;
     }
   }
 
   ngOnInit(): void {
-    // Detectar cambios de ruta
     this.subscriptions.add(
       this.router.events.subscribe((event) => {
         if (event instanceof NavigationEnd) {
@@ -42,6 +42,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
         }
       })
     );
+
+    this.authService.getToken().subscribe((token) => {
+      this.isAuthenticated = !!token;
+    });
   }
 
   ngOnDestroy(): void {
@@ -58,9 +62,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
     console.log('Carrito abierto/cerrado');
   }
 
-  formularioAuth(): void {
-    this.authService.mostrarFormulario();
-    console.log('Formulario de inicio de sesión solicitado');
+  navigateUser(): void {
+    if (this.isAuthenticated) {
+      this.router.navigate(['/user']);
+    } else {
+      this.authService.mostrarFormulario();
+      console.log('Formulario de inicio de sesión solicitado');
+    }
   }
 
   navigateBack(): void {

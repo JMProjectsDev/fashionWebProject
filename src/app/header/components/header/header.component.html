@@ -1,39 +1,90 @@
 <header
   class="flex flex-row justify-center items-center md:flex-col md:grid text-center py-2 fixed top-0 left-0 w-full z-50 transition-colors duration-300"
-  [ngClass]="{'bg-static text-white': !isSearchRoute && !scrolled,
+  [ngClass]="{
+    'bg-static text-white': !isSearchRoute && !scrolled,
     'bg-scroll text-white': !isSearchRoute && scrolled,
     'bg-white text-black': isSearchRoute,
     'md:grid-cols-[50px_1fr_310px_50px_50px]': !isSearchRoute,
     'md:grid-cols-[50px_1fr_50px_50px]': isSearchRoute
-  }">
-    <button (click)="toggleSideMenu()" class="flex flex-col justify-around w-8 h-8 mx-4 md:ml-2 focus:outline-none">
-        <span class="block w-full h-1 rounded-full" [ngClass]="{'bg-black': isSearchRoute, 'bg-white': !isSearchRoute}"></span>
-        <span class="block w-full h-1 rounded-full" [ngClass]="{'bg-black': isSearchRoute, 'bg-white': !isSearchRoute}"></span>
-        <span class="block w-full h-1 rounded-full" [ngClass]="{'bg-black': isSearchRoute, 'bg-white': !isSearchRoute}"></span>
-    </button>
+  }"
+>
+  <button
+    (click)="toggleSideMenu()"
+    class="flex flex-col justify-around w-8 h-8 mx-4 md:ml-2 focus:outline-none"
+  >
+    <span
+      class="block w-full h-1 rounded-full"
+      [ngClass]="{ 'bg-black': isSearchRoute, 'bg-white': !isSearchRoute }"
+    ></span>
+    <span
+      class="block w-full h-1 rounded-full"
+      [ngClass]="{ 'bg-black': isSearchRoute, 'bg-white': !isSearchRoute }"
+    ></span>
+    <span
+      class="block w-full h-1 rounded-full"
+      [ngClass]="{ 'bg-black': isSearchRoute, 'bg-white': !isSearchRoute }"
+    ></span>
+  </button>
 
-    <h1 id="title" class="text-4xl font-semibold cursor-pointer" [ngClass]="{'text-black md:ml-[69px]': isSearchRoute, 'text-white md:ml-[380px]': !isSearchRoute}"
-        (click)="navigateBack()">Endless Apparel
-    </h1>
-    
-    <ng-container *ngIf="!isSearchRoute">
-        <div class="hidden md:flex items-center md:relative">
-            <i class="fa-solid fa-magnifying-glass absolute top-1/2 transform -translate-y-1/2 left-2"
-            [ngClass]="{'text-black': isSearchRoute, 'text-white': !isSearchRoute}"></i>
-            <a routerLink="/search" routerLinkActive="active">
-                <input type="text" placeholder="Buscar" class="pl-10 pr-2 py-1 border-2 rounded focus:ring focus:outline-none cursor-pointer"
-                [ngClass]="{'border-black text-black placeholder-black bg-white': isSearchRoute,
-                'border-white text-white placeholder-white bg-transparent': !isSearchRoute}"/>
-            </a>
-        </div>
-    </ng-container>
-    
-    <a (click)="formularioAuth()" class="hidden lg:flex lg:flex-row lg:place-content-center md:flex md:flex-row md:place-items-center">
-        <i class="fa-solid fa-user hover:cursor-pointer transition duration-300" [ngClass]="{'text-black hover:text-gray-600': isSearchRoute, 'text-white hover:text-black': !isSearchRoute}"></i>
-    </a>
+  <h1
+    id="title"
+    class="text-4xl font-semibold cursor-pointer"
+    [ngClass]="{
+      'text-black md:ml-[69px]': isSearchRoute,
+      'text-white md:ml-[380px]': !isSearchRoute
+    }"
+    (click)="navigateBack()"
+  >
+    Endless Apparel
+  </h1>
 
-    <a (click)="toggleCartMenu()" class="hidden lg:flex lg:flex-row lg:place-content-center md:flex md:flex-row md:place-items-center">
-    <i class="fa-solid fa-bag-shopping hover:cursor-pointer transition duration-300"
-      [ngClass]="{'text-black hover:text-gray-600': isSearchRoute, 'text-white hover:text-black': !isSearchRoute}"></i>
-    </a>
+  <ng-container *ngIf="!isSearchRoute">
+    <div class="hidden md:flex items-center md:relative">
+      <i
+        class="fa-solid fa-magnifying-glass absolute top-1/2 transform -translate-y-1/2 left-2"
+        [ngClass]="{
+          'text-black': isSearchRoute,
+          'text-white': !isSearchRoute
+        }"
+      ></i>
+      <a routerLink="/search" routerLinkActive="active">
+        <input
+          type="text"
+          placeholder="Buscar"
+          class="pl-10 pr-2 py-1 border-2 rounded focus:ring focus:outline-none cursor-pointer"
+          [ngClass]="{
+            'border-black text-black placeholder-black bg-white': isSearchRoute,
+            'border-white text-white placeholder-white bg-transparent':
+              !isSearchRoute
+          }"
+        />
+      </a>
+    </div>
+  </ng-container>
+
+  <a
+    (click)="navigateUser()"
+    class="hidden lg:flex lg:flex-row lg:place-content-center md:flex md:flex-row md:place-items-center"
+  >
+    <i
+      class="fa-solid fa-user hover:cursor-pointer transition duration-300"
+      [ngClass]="{
+        'text-black hover:text-gray-600': isSearchRoute,
+        'text-white hover:text-black': !isSearchRoute
+      }"
+    ></i>
+  </a>
+
+  <a
+    (click)="toggleCartMenu()"
+    class="hidden lg:flex lg:flex-row lg:place-content-center md:flex md:flex-row md:place-items-center"
+  >
+    <i
+      class="fa-solid fa-bag-shopping hover:cursor-pointer transition duration-300"
+      [ngClass]="{
+        'text-black hover:text-gray-600': isSearchRoute,
+        'text-white hover:text-black': !isSearchRoute
+      }"
+    ></i>
+  </a>
 </header>
